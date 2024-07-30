@@ -9,10 +9,10 @@ const express = require('express')
 
 const userRouter = express.Router()
 
-//! RUTAS ESTÁTICAS
+//! STATICS ROUTES
 userRouter.route('/').get(getAll).post(create) //-> users
 
-//!RUTAS DINÁMICAS
+//!DINAMICS ROUTES
 userRouter
   .route('/:id') //! -> /users/:id
   .get(getOne)

@@ -1,14 +1,15 @@
-//!a model llamado User -> una tabla llamada users
+//!a model called User -> a table called users
 
-//? modelo: User ---orm:sequelize-- -> tabla: users
+//The model created here is used to bring, create, update and delete records from a user database.
+
+//? model: User ---orm:sequelize-- -> table: users
 
 const { DataTypes } = require('sequelize')
 const sequelize = require('../utils/connection')
 
-// En Mayúsculas y singular      // en minúsculas y singular
+//!creating a model
 const User = sequelize.define('user', {
   //!users
-  // Definimos las columnas aquí
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -25,11 +26,10 @@ const User = sequelize.define('user', {
     unique: true, //! it means it has to be a diferente email for every user
   },
 
-
-  password :{
-type: DataTypes.STRING,
-allowNull: false,
-},
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 
   birthday: {
     type: DataTypes.DATEONLY,
